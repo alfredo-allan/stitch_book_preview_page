@@ -1,78 +1,38 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en">
+<html class="dark" lang="pt-BR">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Author Bio - Apometria Trilogy</title>
-    <!-- Google Fonts: Space Grotesk -->
+    <title>Biografia do Autor - Trilogia Apometria</title>
+
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <!-- Material Symbols -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <!-- Tailwind CSS -->
+
+    <link rel="stylesheet" href="../styles/index.css" />
+    <link rel="stylesheet" href="../styles/bio.css" />
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <!-- Theme Configuration -->
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#a413ec",
-              secondary: "#3c2348",
-              "background-light": "#f7f6f8",
-              "background-dark": "#0f0f12",
-              "surface-dark": "#1c1122",
-            },
-            fontFamily: {
-              display: ["Space Grotesk", "sans-serif"],
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
-            backgroundImage: {
-              cosmic:
-                "radial-gradient(circle at 50% 0%, #2a1b3d 0%, #0f0f12 70%)",
-              "cosmic-accent": "linear-gradient(to right, #1e3a8a, #a413ec)",
-            },
-          },
-        },
-      };
-    </script>
+
+    <script src="../js/bio.js"></script>
   </head>
   <body
     class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden"
   >
-    <!-- Background Decoration -->
     <div
-      class="fixed inset-0 z-0 pointer-events-none opacity-40"
-      style="
-        background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8cKRrJgePOtPbhUahIScfGmIFX143KXfaLw6kVz8nWtV66M6PEBlCw2ExljQs6_gUhSQuUlgT_nYwMZaJnhLbRVgRUReBHAcQLiewgP-EBslI-Z6N_i5jJhqyLmq4K38DC39-d2fo-0wQL6bTzEMnPDhRtHBer6muHX4CatDlFVPb4b5siOAV8goc_wYFnQCkDPaofzw4I2tXAuhJC5trysypdwXUthtoaI9q-ssbe9L1oCrwt_oe1AHCrCpxkozdET0dIzGMr3OW');
-        background-size: cover;
-        background-position: center;
-        mix-blend-mode: overlay;
-      "
+      class="fixed inset-0 z-0 pointer-events-none opacity-40 background-image-deco"
     ></div>
     <div class="fixed inset-0 z-0 pointer-events-none bg-cosmic"></div>
     <div class="relative z-10 flex flex-col min-h-screen">
-      <!-- Navigation -->
       <header
-        class="sticky top-0 z-50 w-full backdrop-blur-md border-b border-[#3c2348]/50 bg-[#1c1122]/80"
+        class="sticky top-0 z-50 w-full backdrop-blur-md secondary-border header-bg"
       >
         <div
           class="layout-container max-w-[1200px] mx-auto px-6 md:px-10 h-16 flex items-center justify-between"
@@ -86,39 +46,101 @@
             <h2
               class="text-white text-lg font-bold leading-tight tracking-[-0.015em]"
             >
-              Apometria Trilogy
+              Trilogia Apometria
             </h2>
           </div>
           <div class="hidden md:flex items-center gap-9">
             <a
               class="text-gray-300 hover:text-white transition-colors text-sm font-medium"
-              href="../index..html"
-              >Home</a
+              href="../index.html"
+              >Início</a
             >
             <a
               class="text-gray-300 hover:text-white transition-colors text-sm font-medium"
               href="./Review.html"
-              >Books</a
+              >Livros</a
             >
             <a class="text-white text-sm font-medium" href="#">Bio</a>
             <a
               class="text-gray-300 hover:text-white transition-colors text-sm font-medium"
               href="#"
-              >Contact</a
+              >Contato</a
             >
           </div>
           <button
             class="hidden md:flex items-center justify-center rounded-lg h-9 px-4 bg-primary hover:bg-primary/90 transition-colors text-white text-sm font-bold tracking-[0.015em] shadow-[0_0_15px_rgba(164,19,236,0.3)]"
           >
-            <span class="truncate">Buy Books</span>
+            <span class="truncate">Comprar Livros</span>
           </button>
-          <button class="md:hidden text-white">
+
+          <button id="mobile-menu-btn" class="md:hidden text-white">
             <span class="material-symbols-outlined">menu</span>
           </button>
         </div>
       </header>
+
+      <div
+        id="mobile-menu"
+        class="hidden fixed inset-0 z-50 bg-background-dark/95 backdrop-blur-xl flex flex-col items-center justify-start gap-12 md:hidden h-[500px] pt-16 pb-12"
+      >
+        <button
+          id="close-menu-btn"
+          class="absolute top-6 right-6 text-gray-400 hover:text-white transition-colors z-50 p-2"
+        >
+          <span class="material-symbols-outlined text-4xl">close</span>
+        </button>
+
+        <div class="w-full max-w-sm px-6 mt-16">
+          <nav
+            class="flex flex-col items-center gap-2 text-3xl font-display w-full text-left"
+          >
+            <a
+              class="text-gray-300 text-[20px] hover:text-primary transition-colors w-full py-4 rounded-lg hover:bg-surface-dark/50 flex items-center gap-4 px-4 relative top-[-105px]"
+              href="../index.html"
+            >
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >home</span
+              >
+              Início
+            </a>
+            <a
+              class="text-gray-300 text-[20px] hover:text-primary transition-colors w-full py-4 rounded-lg hover:bg-surface-dark/50 flex items-center gap-4 px-4 relative top-[-105px]"
+              href="./Review.html"
+            >
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >menu_book</span
+              >
+              Livros
+            </a>
+            <a
+              class="text-gray-300 text-[20px] hover:text-primary transition-colors w-full py-4 rounded-lg hover:bg-surface-dark/50 flex items-center gap-4 px-4 relative top-[-105px]"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >person</span
+              >
+              Bio
+            </a>
+            <a
+              class="text-gray-300 text-[20px] hover:text-primary transition-colors w-full py-4 rounded-lg hover:bg-surface-dark/50 flex items-center gap-4 px-4 relative top-[-105px]"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >mail</span
+              >
+              Contato
+            </a>
+          </nav>
+        </div>
+
+        <button
+          class="bg-primary hover:brightness-110 text-white px-8 py-3 rounded-full text-lg font-bold shadow-xl shadow-primary/40 flex items-center justify-center gap-2 transition-all relative top-[-105px] mt-[-20px] w-[90%] text-center"
+        >
+          <span>Comprar Livros Agora</span>
+        </button>
+      </div>
+
       <main class="flex-grow flex flex-col items-center py-10 px-4 md:px-10">
-        <!-- Hero Section: Author Intro -->
         <div
           class="layout-content-container flex flex-col max-w-[1080px] w-full"
         >
@@ -126,7 +148,6 @@
             <div
               class="flex flex-col gap-10 lg:gap-16 py-8 lg:flex-row items-center lg:items-start"
             >
-              <!-- Image Container with unique styling -->
               <div
                 class="relative w-full max-w-[400px] lg:w-1/3 flex-shrink-0 group"
               >
@@ -137,15 +158,12 @@
                   class="relative w-full aspect-[3/4] rounded-xl overflow-hidden border border-white/10 shadow-2xl"
                 >
                   <img
-                    alt="Portrait of the author looking thoughtful in dramatic lighting"
+                    alt="Retrato do autor pensativo em iluminação dramática"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter saturate-[0.85] contrast-110"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXa6XLLhpxRsYB-ydsmo6qD8YQLkbuFW4H7ou8YrfQwQF3lTQiLkT-rCLQqDMew1sISfAqMO1OoeHh7xA2bNBdK_P_UAGlsBn7eu-9GqzbsUkYzqQNePKTwYC0sujP5pHJzE_D2tDXyoYpl0NCGqSOYaiS0ISL3yvgL1zzCnqHJKgI3p1t5yBClaZ0h2HqFlBXL0P_f4tAWLn341mpPEhcc0-ynMnX-db9ri8ekC0Bic9TlMbBN1btX7oOdwssmYiPC7wHZEg8HX4R"
                   />
-                  <div
-                    class="absolute inset-0 bg-gradient-to-t from-[#1c1122] via-transparent to-transparent opacity-60"
-                  ></div>
+                  <div class="absolute inset-0 author-image-overlay"></div>
                 </div>
-                <!-- Social Links floating below image -->
                 <div class="flex justify-center gap-4 mt-6">
                   <a
                     class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-300 hover:text-white hover:bg-primary hover:border-primary transition-all duration-300"
@@ -169,7 +187,6 @@
                   </a>
                 </div>
               </div>
-              <!-- Text Content -->
               <div class="flex flex-col gap-8 lg:pt-4 flex-1">
                 <div class="flex flex-col gap-4">
                   <div
@@ -180,28 +197,27 @@
                     ></span>
                     <span
                       class="text-primary text-xs font-bold uppercase tracking-wider"
-                      >The Author</span
+                      >O Autor</span
                     >
                   </div>
                   <h1
                     class="text-white text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight"
                   >
-                    Meeting the Mind <br />
+                    Conhecendo a Mente <br />
                     <span
                       class="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500"
-                      >Behind the Volumes</span
+                      >Por Trás dos Volumes</span
                     >
                   </h1>
                   <p
                     class="text-gray-300 text-lg md:text-xl font-light leading-relaxed max-w-[640px]"
                   >
-                    Bridging the gap between empirical science and the spiritual
-                    realm through the methodical lens of Apometria. A journey
-                    that began with a question and evolved into a five-volume
-                    dedication to the unseen.
+                    Fazendo a ponte entre a ciência empírica e o reino
+                    espiritual através da lente metódica da Apometria. Uma
+                    jornada que começou com uma pergunta e evoluiu para uma
+                    dedicação de cinco volumes ao que não se vê.
                   </p>
                 </div>
-                <!-- Quote Block -->
                 <div
                   class="relative p-6 md:p-8 rounded-xl bg-white/5 border border-white/10 backdrop-blur-sm overflow-hidden"
                 >
@@ -215,34 +231,33 @@
                   <h2
                     class="relative z-10 text-white text-xl md:text-2xl font-medium italic leading-relaxed"
                   >
-                    "Apometria is not just a study; it is a journey into the
-                    depths of consciousness where physics meets the soul."
+                    "Apometria não é apenas um estudo; é uma jornada nas
+                    profundezas da consciência onde a física encontra a alma."
                   </h2>
                 </div>
-                <!-- Bio Details -->
                 <div class="space-y-6 text-gray-400 font-light leading-relaxed">
                   <p>
-                    Born in a small town where tradition often clashed with
-                    curiosity, I spent my early years dismantling radios and
-                    reading philosophy. The mechanical world made sense, but it
-                    felt incomplete. It wasn't until a chance encounter with the
-                    works of early spiritist researchers that I realized the
-                    "ghost in the machine" wasn't a metaphor—it was a field of
-                    study.
+                    Nascido em uma pequena cidade onde a tradição muitas vezes
+                    colidia com a curiosidade, passei meus primeiros anos
+                    desmontando rádios e lendo filosofia. O mundo mecânico fazia
+                    sentido, mas parecia incompleto. Foi só após um encontro
+                    casual com as obras de pesquisadores espíritas pioneiros que
+                    percebi que o "fantasma na máquina" não era uma metáfora –
+                    era um campo de estudo.
                   </p>
                   <p>
-                    For the last two decades, I have dedicated my life to
-                    researching Apometria, not as a mystic, but as an
-                    investigator. My goal has always been to strip away the
-                    superstition and reveal the mechanics of the spirit. The
-                    5-volume trilogy is the culmination of this life's work.
+                    Nas últimas duas décadas, dediquei minha vida a pesquisar
+                    Apometria, não como um místico, mas como um investigador.
+                    Meu objetivo sempre foi despojar a superstição e revelar a
+                    mecânica do espírito. A trilogia de 5 volumes é o ponto
+                    culminante do trabalho da minha vida.
                   </p>
                 </div>
                 <div class="pt-4">
                   <button
                     class="flex items-center justify-center gap-2 rounded-lg h-12 px-6 bg-primary hover:bg-primary/90 text-white font-bold transition-all shadow-[0_0_20px_rgba(164,19,236,0.25)] hover:shadow-[0_0_30px_rgba(164,19,236,0.4)]"
                   >
-                    <span>Contact Me</span>
+                    <span>Entre em Contato</span>
                     <span class="material-symbols-outlined text-[20px]"
                       >arrow_forward</span
                     >
@@ -252,59 +267,55 @@
             </div>
           </div>
         </div>
-        <!-- Divider -->
         <div
           class="w-full max-w-[1080px] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-16"
         ></div>
-        <!-- Timeline Section -->
         <div
           class="layout-content-container flex flex-col max-w-[800px] w-full"
         >
           <div class="flex flex-col gap-10 px-4 py-6">
             <div class="text-center mb-8">
               <h3 class="text-white text-3xl font-bold mb-3">
-                The Path of Discovery
+                O Caminho da Descoberta
               </h3>
               <p class="text-gray-400">
-                Key milestones in the research and writing process.
+                Marcos chave no processo de pesquisa e escrita.
               </p>
             </div>
             <div class="grid grid-cols-[40px_1fr] gap-x-6 px-4">
-              <!-- Item 1 -->
               <div class="flex flex-col items-center gap-1 pt-1">
                 <div
-                  class="text-primary bg-[#1c1122] rounded-full p-1 border border-primary/30 z-10"
+                  class="text-primary timeline-item-bg rounded-full p-1 border border-primary/30 z-10"
                 >
                   <span class="material-symbols-outlined text-[20px]"
                     >auto_awesome</span
                   >
                 </div>
                 <div
-                  class="w-[2px] bg-gradient-to-b from-primary/50 to-[#3c2348] h-full grow min-h-[60px]"
+                  class="w-[2px] bg-gradient-to-b from-primary/50 to-secondary h-full grow min-h-[60px]"
                 ></div>
               </div>
               <div class="flex flex-1 flex-col pt-1 pb-10">
                 <span class="text-primary text-sm font-bold mb-1">2008</span>
                 <h4 class="text-white text-lg font-medium leading-normal mb-2">
-                  First Encounter with Apometria
+                  Primeiro Encontro com a Apometria
                 </h4>
                 <p class="text-gray-400 text-sm">
-                  Attended a seminar that challenged my materialist worldview
-                  and sparked the initial curiosity.
+                  Participei de um seminário que desafiou minha visão de mundo
+                  materialista e despertou a curiosidade inicial.
                 </p>
               </div>
-              <!-- Item 2 -->
               <div class="flex flex-col items-center gap-1 pt-0">
-                <div class="w-[2px] bg-[#3c2348] h-2"></div>
+                <div class="w-[2px] timeline-line-bg h-2"></div>
                 <div
-                  class="text-white bg-[#1c1122] rounded-full p-1 border border-white/20 z-10"
+                  class="text-white timeline-item-bg rounded-full p-1 border border-white/20 z-10"
                 >
                   <span class="material-symbols-outlined text-[20px]"
                     >menu_book</span
                   >
                 </div>
                 <div
-                  class="w-[2px] bg-[#3c2348] h-full grow min-h-[60px]"
+                  class="w-[2px] timeline-line-bg h-full grow min-h-[60px]"
                 ></div>
               </div>
               <div class="flex flex-1 flex-col pt-0 pb-10">
@@ -312,40 +323,38 @@
                   >2010 - 2015</span
                 >
                 <h4 class="text-white text-lg font-medium leading-normal mb-2">
-                  The Research Phase
+                  A Fase de Pesquisa
                 </h4>
                 <p class="text-gray-400 text-sm">
-                  Traveled to 12 countries to document case studies and
-                  interview practitioners.
+                  Viajei por 12 países para documentar estudos de caso e
+                  entrevistar praticantes.
                 </p>
               </div>
-              <!-- Item 3 -->
               <div class="flex flex-col items-center gap-1 pt-0">
-                <div class="w-[2px] bg-[#3c2348] h-2"></div>
+                <div class="w-[2px] timeline-line-bg h-2"></div>
                 <div
                   class="bg-primary bg-center bg-no-repeat aspect-square bg-cover rounded-full w-8 h-8 flex items-center justify-center z-10 shadow-[0_0_10px_rgba(164,19,236,0.5)]"
                 >
                   <span class="text-white font-bold text-xs">V1</span>
                 </div>
                 <div
-                  class="w-[2px] bg-[#3c2348] h-full grow min-h-[60px]"
+                  class="w-[2px] timeline-line-bg h-full grow min-h-[60px]"
                 ></div>
               </div>
               <div class="flex flex-1 flex-col pt-0 pb-10">
                 <span class="text-primary text-sm font-bold mb-1">2018</span>
                 <h4 class="text-white text-lg font-medium leading-normal mb-2">
-                  Published Volume 1
+                  Publicação do Volume 1
                 </h4>
                 <p class="text-gray-400 text-sm">
-                  "Foundations of the Spirit" was released to critical acclaim
-                  within the community.
+                  "Fundamentos do Espírito" foi lançado com aclamação da crítica
+                  dentro da comunidade.
                 </p>
               </div>
-              <!-- Item 4 -->
               <div class="flex flex-col items-center gap-1 pb-1">
-                <div class="w-[2px] bg-[#3c2348] h-2"></div>
+                <div class="w-[2px] timeline-line-bg h-2"></div>
                 <div
-                  class="text-white bg-[#1c1122] rounded-full p-1 border border-white/20 z-10"
+                  class="text-white timeline-item-bg rounded-full p-1 border border-white/20 z-10"
                 >
                   <span class="material-symbols-outlined text-[20px]"
                     >verified</span
@@ -355,18 +364,18 @@
               <div class="flex flex-1 flex-col pt-0 pb-1">
                 <span class="text-gray-500 text-sm font-bold mb-1">2023</span>
                 <h4 class="text-white text-lg font-medium leading-normal mb-2">
-                  Completed the Trilogy
+                  Conclusão da Trilogia
                 </h4>
                 <p class="text-gray-400 text-sm">
-                  The final words were written, concluding the 15-year odyssey.
+                  As palavras finais foram escritas, concluindo a odisseia de 15
+                  anos.
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <!-- Footer Section Teaser -->
         <div
-          class="w-full max-w-[1080px] mt-20 p-8 rounded-2xl bg-gradient-to-r from-[#1c1122] to-[#2a1b3d] border border-white/5 relative overflow-hidden group"
+          class="w-full max-w-[1080px] mt-20 p-8 rounded-2xl bg-gradient-to-r from-surface-dark to-[#2a1b3d] border border-white/5 relative overflow-hidden group"
         >
           <div
             class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"
@@ -375,34 +384,30 @@
             class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6"
           >
             <div>
-              <h3 class="text-white text-xl font-bold">
-                Explore the Collection
-              </h3>
+              <h3 class="text-white text-xl font-bold">Explore a Coleção</h3>
               <p class="text-gray-400 text-sm mt-1">
-                Dive into the 5-volume series that defines modern Apometria.
+                Mergulhe na série de 5 volumes que define a Apometria moderna.
               </p>
             </div>
             <div class="flex gap-4">
               <button
                 class="px-5 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 text-white text-sm font-medium transition-colors"
               >
-                Read Excerpts
+                Ler Trechos
               </button>
               <button
                 class="px-5 py-2.5 rounded-lg bg-white text-black hover:bg-gray-100 text-sm font-bold transition-colors"
               >
-                View Books
+                Ver Livros
               </button>
             </div>
           </div>
         </div>
       </main>
-      <footer
-        class="w-full border-t border-[#3c2348]/50 bg-[#0f0f12] py-8 mt-12"
-      >
+      <footer class="w-full secondary-border footer-bg py-8 mt-12">
         <div class="max-w-[1200px] mx-auto px-6 text-center">
           <p class="text-gray-500 text-sm">
-            © 2024 Apometria Trilogy. All rights reserved.
+            © 2026 Trilogia Apometria. Todos os direitos reservados.
           </p>
         </div>
       </footer>

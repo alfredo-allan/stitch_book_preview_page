@@ -1,70 +1,36 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Shopping Cart - Apometria</title>
-    <!-- Google Fonts -->
+
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
-      rel="stylesheet"
-    />
-    <!-- Material Symbols -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <!-- Tailwind CSS -->
+
+    <link rel="stylesheet" href="../styles/cart.css" />
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <!-- Theme Configuration -->
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              primary: "#660099",
-              "accent-blue": "#3b82f6",
-              "background-dark": "#0B0B15",
-              "background-card": "#151520",
-            },
-            fontFamily: {
-              display: ["Space Grotesk", "sans-serif"],
-              body: ["Sora", "sans-serif"],
-              signature: [
-                "cursive",
-              ] /* Fallback if needed, though we might use an SVG */,
-            },
-            backgroundImage: {
-              "cosmic-gradient":
-                "radial-gradient(circle at 50% 0%, #2a1b3d 0%, #0B0B15 60%)",
-              "accent-gradient":
-                "linear-gradient(135deg, #3b82f6 0%, #660099 100%)",
-            },
-          },
-        },
-      };
-    </script>
+    <script src="../js/cart.js"></script>
   </head>
   <body
     class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white"
   >
-    <!-- Main Container -->
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
-      <!-- Cosmic Background Effect -->
       <div
-        class="fixed inset-0 z-0 bg-cosmic pointer-events-none opacity-80"
+        class="fixed inset-0 z-0 bg-cosmic-gradient pointer-events-none opacity-80"
       ></div>
-      <!-- Navbar -->
+
       <header
-        class="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200 dark:border-[#232f48] bg-white/80 dark:bg-[#111722]/90 backdrop-blur-md px-6 py-4 lg:px-12"
+        class="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200 dark:border-border-dark bg-white/80 dark:bg-surface-light/90 backdrop-blur-md px-6 py-4 lg:px-12"
       >
         <div class="flex items-center gap-4">
           <div
@@ -93,7 +59,7 @@
         </nav>
         <div class="flex items-center gap-4">
           <button
-            class="relative flex items-center justify-center size-10 rounded-full hover:bg-slate-100 dark:hover:bg-[#232f48] transition-colors"
+            class="relative flex items-center justify-center size-10 rounded-full hover:bg-slate-100 dark:hover:bg-border-dark transition-colors"
           >
             <span
               class="material-symbols-outlined text-slate-700 dark:text-white"
@@ -106,10 +72,9 @@
           </button>
         </div>
       </header>
-      <!-- Page Content -->
+
       <main class="relative z-10 flex-grow px-4 py-8 lg:px-12 xl:px-24">
         <div class="mx-auto max-w-7xl">
-          <!-- Page Title -->
           <div class="mb-8">
             <h1 class="text-3xl font-black tracking-tight sm:text-4xl mb-2">
               Your Cart
@@ -119,13 +84,10 @@
             </p>
           </div>
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-            <!-- Cart Items List (Left Column) -->
             <div class="lg:col-span-8 flex flex-col gap-4">
-              <!-- Item 1 -->
               <div
-                class="group flex flex-col sm:flex-row gap-6 bg-white dark:bg-[#161e2c] border border-slate-200 dark:border-[#232f48] p-4 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300"
+                class="group flex flex-col sm:flex-row gap-6 bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark p-4 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300"
               >
-                <!-- Image -->
                 <div class="shrink-0 w-full sm:w-[100px]">
                   <div
                     class="aspect-[2/3] w-full bg-slate-800 rounded-lg bg-cover bg-center shadow-md group-hover:scale-[1.02] transition-transform duration-500"
@@ -135,7 +97,6 @@
                     "
                   ></div>
                 </div>
-                <!-- Content -->
                 <div class="flex flex-1 flex-col justify-between">
                   <div class="flex justify-between items-start gap-4">
                     <div>
@@ -157,13 +118,12 @@
                     </p>
                   </div>
                   <div class="flex justify-between items-end mt-4 sm:mt-0">
-                    <!-- Quantity -->
                     <div
-                      class="flex items-center gap-3 bg-slate-100 dark:bg-[#232f48] rounded-lg px-2 py-1"
+                      class="flex items-center gap-3 bg-slate-100 dark:bg-border-dark rounded-lg px-2 py-1"
                     >
                       <button
                         aria-label="Decrease quantity"
-                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-surface-light text-slate-600 dark:text-white transition-colors"
                       >
                         <span
                           class="material-symbols-outlined text-sm font-bold"
@@ -171,14 +131,14 @@
                         >
                       </button>
                       <input
-                        class="w-8 bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-slate-900 dark:text-white appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none"
+                        class="w-8 bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-slate-900 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                         min="1"
                         type="number"
                         value="1"
                       />
                       <button
                         aria-label="Increase quantity"
-                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-surface-light text-slate-600 dark:text-white transition-colors"
                       >
                         <span
                           class="material-symbols-outlined text-sm font-bold"
@@ -186,7 +146,6 @@
                         >
                       </button>
                     </div>
-                    <!-- Remove Action -->
                     <button
                       class="flex items-center gap-1 text-xs font-medium text-slate-400 hover:text-red-400 transition-colors"
                     >
@@ -198,9 +157,8 @@
                   </div>
                 </div>
               </div>
-              <!-- Item 2 -->
               <div
-                class="group flex flex-col sm:flex-row gap-6 bg-white dark:bg-[#161e2c] border border-slate-200 dark:border-[#232f48] p-4 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300"
+                class="group flex flex-col sm:flex-row gap-6 bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark p-4 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300"
               >
                 <div class="shrink-0 w-full sm:w-[100px]">
                   <div
@@ -233,10 +191,10 @@
                   </div>
                   <div class="flex justify-between items-end mt-4 sm:mt-0">
                     <div
-                      class="flex items-center gap-3 bg-slate-100 dark:bg-[#232f48] rounded-lg px-2 py-1"
+                      class="flex items-center gap-3 bg-slate-100 dark:bg-border-dark rounded-lg px-2 py-1"
                     >
                       <button
-                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-surface-light text-slate-600 dark:text-white transition-colors"
                       >
                         <span
                           class="material-symbols-outlined text-sm font-bold"
@@ -244,13 +202,13 @@
                         >
                       </button>
                       <input
-                        class="w-8 bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-slate-900 dark:text-white appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none"
+                        class="w-8 bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-slate-900 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                         min="1"
                         type="number"
                         value="1"
                       />
                       <button
-                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-surface-light text-slate-600 dark:text-white transition-colors"
                       >
                         <span
                           class="material-symbols-outlined text-sm font-bold"
@@ -269,9 +227,8 @@
                   </div>
                 </div>
               </div>
-              <!-- Item 3 -->
               <div
-                class="group flex flex-col sm:flex-row gap-6 bg-white dark:bg-[#161e2c] border border-slate-200 dark:border-[#232f48] p-4 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300"
+                class="group flex flex-col sm:flex-row gap-6 bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark p-4 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300"
               >
                 <div class="shrink-0 w-full sm:w-[100px]">
                   <div
@@ -308,10 +265,10 @@
                   </div>
                   <div class="flex justify-between items-end mt-4 sm:mt-0">
                     <div
-                      class="flex items-center gap-3 bg-slate-100 dark:bg-[#232f48] rounded-lg px-2 py-1"
+                      class="flex items-center gap-3 bg-slate-100 dark:bg-border-dark rounded-lg px-2 py-1"
                     >
                       <button
-                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-surface-light text-slate-600 dark:text-white transition-colors"
                       >
                         <span
                           class="material-symbols-outlined text-sm font-bold"
@@ -319,13 +276,13 @@
                         >
                       </button>
                       <input
-                        class="w-8 bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-slate-900 dark:text-white appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none"
+                        class="w-8 bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-slate-900 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
                         min="1"
                         type="number"
                         value="1"
                       />
                       <button
-                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-surface-light text-slate-600 dark:text-white transition-colors"
                       >
                         <span
                           class="material-symbols-outlined text-sm font-bold"
@@ -345,53 +302,18 @@
                 </div>
               </div>
             </div>
-            <!-- Order Summary (Right Column) -->
             <div class="lg:col-span-4">
               <div
-                class="sticky top-28 flex flex-col gap-6 bg-white dark:bg-[#161e2c] border border-slate-200 dark:border-[#232f48] rounded-xl p-6 shadow-lg"
+                class="sticky top-28 flex flex-col gap-6 bg-white dark:bg-surface-dark border border-slate-200 dark:border-border-dark rounded-xl p-6 shadow-lg"
               >
                 <h2 class="text-xl font-bold text-slate-900 dark:text-white">
                   Order Summary
                 </h2>
                 <div
-                  class="flex flex-col gap-3 pb-6 border-b border-slate-200 dark:border-[#232f48]"
-                >
-                  <div
-                    class="flex justify-between text-sm text-slate-500 dark:text-slate-400"
-                  >
-                    <span>Subtotal</span>
-                    <span class="font-medium text-slate-900 dark:text-white"
-                      >$134.98</span
-                    >
-                  </div>
-                  <div
-                    class="flex justify-between text-sm text-slate-500 dark:text-slate-400"
-                  >
-                    <span>Shipping estimate</span>
-                    <span class="font-medium text-green-500">Free</span>
-                  </div>
-                  <div
-                    class="flex justify-between text-sm text-slate-500 dark:text-slate-400"
-                  >
-                    <span>Tax estimate</span>
-                    <span class="font-medium text-slate-900 dark:text-white"
-                      >$10.80</span
-                    >
-                  </div>
-                </div>
-                <div class="flex justify-between items-center">
-                  <span
-                    class="text-base font-medium text-slate-900 dark:text-white"
-                    >Order Total</span
-                  >
-                  <span
-                    class="text-2xl font-black text-slate-900 dark:text-white"
-                    >$145.78</span
-                  >
-                </div>
-                <!-- CTA Button with Gradient -->
+                  class="flex flex-col gap-3 pb-6 border-b border-slate-200 dark:border-border-dark"
+                ></div>
                 <button
-                  class="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 p-4 font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-500/40"
+                  class="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-accent-blue to-primary p-4 font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-500/40"
                 >
                   <div
                     class="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-300"
@@ -402,35 +324,6 @@
                     >arrow_forward</span
                   >
                 </button>
-                <!-- Trust Badges -->
-                <div class="flex flex-col items-center gap-3 mt-2">
-                  <div
-                    class="flex items-center gap-2 text-xs text-slate-400 uppercase tracking-wider font-semibold"
-                  >
-                    <span class="material-symbols-outlined text-sm">lock</span>
-                    Secure Checkout
-                  </div>
-                  <div
-                    class="flex gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-300"
-                  >
-                    <!-- Simple CSS Shapes to represent Cards as placeholders since external SVG icons can be messy -->
-                    <div
-                      class="h-6 w-10 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center text-[8px] font-bold text-slate-500"
-                    >
-                      VISA
-                    </div>
-                    <div
-                      class="h-6 w-10 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center text-[8px] font-bold text-slate-500"
-                    >
-                      MC
-                    </div>
-                    <div
-                      class="h-6 w-10 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center text-[8px] font-bold text-slate-500"
-                    >
-                      AMEX
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

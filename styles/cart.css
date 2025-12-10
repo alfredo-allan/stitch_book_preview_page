@@ -1,0 +1,38 @@
+/* bio.css */
+
+/* --- Classes para Header e Footer (Substituem hardcodes hex) --- */
+
+/* Cor de fundo do Header (bg-[#1c1122]/80) */
+.header-bg {
+  background-color: rgba(28, 17, 34, 0.8); /* Cor surface-dark/80 */
+}
+/* Cor da borda do Header e Footer (border-[#3c2348]/50) */
+.secondary-border {
+  border-color: rgba(60, 35, 72, 0.5); /* Cor secondary/50 */
+}
+/* Cor de background da sobreposição da imagem do autor (from-[#1c1122]) */
+.author-image-overlay {
+  background-image: linear-gradient(to top, #1c1122 0%, transparent 100%);
+  opacity: 0.6;
+}
+/* Cor de background do item da Timeline (bg-[#1c1122]) */
+.timeline-item-bg {
+  background-color: #1c1122; /* Cor surface-dark */
+}
+/* Cor de background do traço da Timeline (bg-[#3c2348]) */
+.timeline-line-bg {
+  background-color: #3c2348; /* Cor secondary */
+}
+/* Cor de background do Footer (bg-[#0f0f12]) */
+.footer-bg {
+  background-color: #0f0f12; /* Cor background-dark */
+}
+
+/* --- Background Decoration (Substitui o style="") --- */
+
+.background-image-deco {
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB8cKRrJgePOtPbhUahIScfGmIFX143KXfaLw6kVz8nWtV66M6PEBlCw2ExljQs6_gUhSQuUlgT_nYwMZaJnhLbRVgRUReBHAcQLiewgP-EBslI-Z6N_i5jJhqyLmq4K38DC39-d2fo-0wQL6bTzEMnPDhRtHBer6muHX4CatDlFVPb4b5siOAV8goc_wYFnQCkDPaofzw4I2tXAuhJC5trysypdwXUthtoaI9q-ssbe9L1oCrwt_oe1AHCrCpxkozdET0dIzGMr3OW");
+  background-size: cover;
+  background-position: center;
+  mix-blend-mode: overlay;
+}
