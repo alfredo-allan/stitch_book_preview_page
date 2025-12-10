@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Apometria Trilogy Home</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Sora:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Tailwind Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#660099",
+              "accent-blue": "#3b82f6",
+              "background-dark": "#0B0B15",
+              "background-card": "#151520",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Sora", "sans-serif"],
+              signature: [
+                "cursive",
+              ] /* Fallback if needed, though we might use an SVG */,
+            },
+            backgroundImage: {
+              "cosmic-gradient":
+                "radial-gradient(circle at 50% 0%, #2a1b3d 0%, #0B0B15 60%)",
+              "accent-gradient":
+                "linear-gradient(135deg, #3b82f6 0%, #660099 100%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for carousel */
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+
+      /* Cosmic subtle stars/dust effect */
+      .stars {
+        background-image: radial-gradient(
+            1px 1px at 20px 30px,
+            #ffffff,
+            rgba(0, 0, 0, 0)
+          ),
+          radial-gradient(1px 1px at 40px 70px, #ffffff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 50px 160px, #ffffff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0, 0, 0, 0)),
+          radial-gradient(1px 1px at 130px 80px, #ffffff, rgba(0, 0, 0, 0));
+        background-repeat: repeat;
+        background-size: 200px 200px;
+        opacity: 0.15;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-dark text-white font-body selection:bg-primary selection:text-white overflow-x-hidden"
+  >
+    <!-- Cosmic Background Layers -->
+    <div
+      class="fixed inset-0 z-[-2] bg-background-dark bg-cosmic-gradient"
+    ></div>
+    <div class="stars"></div>
+    <!-- Navigation -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-background-dark/70 border-b border-white/5"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="size-8 rounded-full bg-accent-gradient flex items-center justify-center text-white"
+          >
+            <span class="material-symbols-outlined text-[20px]"
+              >auto_awesome</span
+            >
+          </div>
+          <h1 class="font-display font-bold text-xl tracking-tight">
+            <span class="text-transparent bg-clip-text bg-accent-gradient"
+              >Apometria</span
+            >
+            Trilogy
+          </h1>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            href="#volumes"
+            >Volumes</a
+          >
+          <a
+            class="text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            href="#bio"
+            >Bio</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <a
+            class="hidden sm:block text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            href="./pages/ShoppingCart.html"
+            >Cart</a
+          >
+          <a
+            class="hidden sm:block text-sm font-medium text-gray-300 hover:text-white transition-colors"
+            href="./pages/Login.html"
+            >Login</a
+          >
+          <button
+            class="bg-primary/20 hover:bg-primary/40 border border-primary/50 text-white px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 flex items-center gap-2"
+          >
+            <span>Acquire</span>
+            <span class="material-symbols-outlined text-[16px]"
+              >arrow_forward</span
+            >
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="pt-24 pb-20">
+      <!-- Hero Section -->
+      <section
+        class="relative min-h-[85vh] flex items-center justify-center px-6"
+      >
+        <div
+          class="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+        >
+          <div class="flex flex-col gap-6 relative z-10">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 w-fit"
+            >
+              <span
+                class="size-2 rounded-full bg-accent-blue animate-pulse"
+              ></span>
+              <span
+                class="text-xs uppercase tracking-widest text-accent-blue font-bold"
+                >New Release</span
+              >
+            </div>
+            <h1
+              class="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight"
+            >
+              Unlocking the <br />
+              <span class="text-transparent bg-clip-text bg-accent-gradient"
+                >Spiritual Dimensions</span
+              >
+            </h1>
+            <p
+              class="text-gray-400 text-lg md:text-xl leading-relaxed max-w-lg font-light"
+            >
+              A comprehensive guide to the ethereal laws and energetic healing.
+              Explore the complete 5-volume masterpiece on modern Apometria.
+            </p>
+            <div class="pt-4 flex flex-col sm:flex-row gap-4">
+              <button
+                class="h-12 px-8 rounded-lg bg-accent-gradient hover:opacity-90 transition-opacity text-white font-display font-bold flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(102,0,153,0.3)]"
+              >
+                Start Reading
+              </button>
+              <button
+                class="h-12 px-8 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white font-display font-bold flex items-center justify-center transition-colors"
+              >
+                Learn More
+              </button>
+            </div>
+            <!-- Stylized Signature -->
+            <div class="mt-8 opacity-70">
+              <svg
+                fill="none"
+                height="60"
+                viewbox="0 0 200 60"
+                width="200"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10 40C20 30 30 10 50 10C70 10 60 50 80 50C100 50 110 30 130 30C150 30 140 50 160 50"
+                  stroke="white"
+                  stroke-dasharray="200"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                ></path>
+                <text
+                  fill="white"
+                  font-family="Space Grotesk"
+                  font-size="10"
+                  letter-spacing="2"
+                  x="10"
+                  y="55"
+                >
+                  DR. J. CARVALHO
+                </text>
+              </svg>
+            </div>
+          </div>
+          <div class="relative flex justify-center lg:justify-end">
+            <!-- Decorative Glow -->
+            <div
+              class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full pointer-events-none"
+            ></div>
+            <!-- Hero Image (Simulated 3D Book Stack) -->
+            <div class="relative w-full max-w-md aspect-[4/5] perspective-1000">
+              <div
+                class="w-full h-full bg-cover bg-center rounded-xl shadow-2xl transform rotate-y-12 rotate-x-6 hover:rotate-y-0 hover:rotate-x-0 transition-transform duration-700 ease-out border border-white/10"
+                data-alt="Abstract ethereal book cover art representing spiritual dimensions"
+                style="
+                  background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDP1fYgl-tSoisMOjpkiJncf2MkOOi3FQjcoxbBcWR5rQnFp34kNHAOR3LxGSWdDuMH4I16LoE3NS6UN9aBzLqr_EAp2bBBb06izctzPHyfdx8ggih36jsM5ScI2ZBeVO_DtwfYdiLNxa48rhuD4M9DR45XigdvnWEnoS2TRuZueeyAsx2q_1gEcx_9NgB7WIMa0YshPAD8ybWZNgCooC0ChbeTfF-8SO3mxpECEGR0MPEncUYWDQ69zGgCMGEr8QHV1TjYoz437vw0');
+                "
+              >
+                <div
+                  class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 to-transparent"
+                >
+                  <p
+                    class="text-accent-blue font-bold tracking-widest text-sm mb-1"
+                  >
+                    THE COLLECTION
+                  </p>
+                  <h3 class="text-3xl font-display font-bold text-white">
+                    Complete Series
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Volumes Section -->
+      <section
+        class="py-20 px-6 bg-background-dark/50 border-y border-white/5"
+        id="volumes"
+      >
+        <div class="max-w-7xl mx-auto flex flex-col gap-12">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end gap-6"
+          >
+            <div>
+              <h2 class="font-display text-3xl md:text-4xl font-bold mb-3">
+                The Complete Collection
+              </h2>
+              <p class="text-gray-400 max-w-xl">
+                Five volumes meticulously crafted to guide you through every
+                layer of the energetic spectrum.
+              </p>
+            </div>
+            <div class="hidden md:flex gap-2">
+              <button
+                class="size-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"
+              >
+                <span class="material-symbols-outlined">chevron_left</span>
+              </button>
+              <button
+                class="size-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-colors"
+              >
+                <span class="material-symbols-outlined">chevron_right</span>
+              </button>
+            </div>
+          </div>
+          <!-- Grid/Line of 5 Books -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <!-- Volume 1 -->
+            <div class="group relative flex flex-col gap-4">
+              <div
+                class="aspect-[2/3] w-full rounded-lg overflow-hidden relative shadow-lg bg-gray-800"
+              >
+                <img
+                  alt="Volume I Book Cover"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM28YmIi8Zr8KAlS23ZgkrtYnWfypYQctNk6U5lM913UF3gCtO_Yu0HbXsnGqDJ2Z3QE_WJHYb0qrLyo-ECqYYostDmR-0LrT3NFLd6Rtj-wHisJDHmtQfS7WI8WxLZYWC5SF9WjoJ4qDvah4OTfAj49pKNJPV-PrP-haQ2wlEXVUycwBfNqB5GNRfXCpAwIudDejjLDCMtrks111tuoL0Jop2y93hzrx4ZpNAJcTheWS3NLYlFp-kgeP9m5vsVGRI0B717BGxu6pf"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"
+                ></div>
+                <div
+                  class="absolute top-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white border border-white/10"
+                >
+                  Vol. I
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3
+                  class="text-lg font-display font-bold text-white group-hover:text-accent-blue transition-colors"
+                >
+                  Foundations
+                </h3>
+                <p class="text-sm text-gray-500">Dr. J. Carvalho</p>
+                <button
+                  class="mt-3 text-xs font-bold uppercase tracking-wider text-accent-blue hover:text-white transition-colors flex items-center gap-1"
+                >
+                  View Preview
+                  <span class="material-symbols-outlined text-[14px]"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Volume 2 -->
+            <div class="group relative flex flex-col gap-4">
+              <div
+                class="aspect-[2/3] w-full rounded-lg overflow-hidden relative shadow-lg bg-gray-800"
+              >
+                <img
+                  alt="Volume II Book Cover"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7qBiVoDl-M9Ly7MpXovKMN2bZtTRpZ42REucVb31697XMM3k75iEiDLvgL6Wcj9cIwAc8AW078J67q87-bqr0hSVtpSctpsh4_dItnaIVHoPMbXSUmGPs35QLxi3jrzG83SqiQmtDtin0rWKw8kfu8VGKUAS752itD9r33L5zc9hRxgFGi3RUxzY0mrpOHFkki7w1p3f4xKL2VjU63GrBisnOfGLE7vgarVBJ_DdWYRtODDgojK5jn07x_wcASa7Bquog1dKJigvJ"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"
+                ></div>
+                <div
+                  class="absolute top-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white border border-white/10"
+                >
+                  Vol. II
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3
+                  class="text-lg font-display font-bold text-white group-hover:text-accent-blue transition-colors"
+                >
+                  Techniques
+                </h3>
+                <p class="text-sm text-gray-500">Dr. J. Carvalho</p>
+                <button
+                  class="mt-3 text-xs font-bold uppercase tracking-wider text-accent-blue hover:text-white transition-colors flex items-center gap-1"
+                >
+                  View Preview
+                  <span class="material-symbols-outlined text-[14px]"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Volume 3 -->
+            <div class="group relative flex flex-col gap-4">
+              <div
+                class="aspect-[2/3] w-full rounded-lg overflow-hidden relative shadow-lg bg-gray-800"
+              >
+                <img
+                  alt="Volume III Book Cover"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_rRiA6GAVUAglxPQxu3zO8oIuRNo9pQcCDqpQ1BfC6cPqk6P-NBc76utVp6d93lyrFcd6LmRHmEGN1A4JIm6lTp2gtJgS1SJad1XRfOWNuR3kWUwCM32n6Rq78gHhvC6t6KyNMRvRD6yF7J7dsUzd3l6445DLQMXTivHyMRsHCxyFIME-CzBDCUkX2w_1v_L-X2gB0QQAsfzrEaDW9ojCA_Tarnx48D2EY5Anw8vMZTtG5kdc94UECzDcW3voNkBzB3Fc569l34i6"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"
+                ></div>
+                <div
+                  class="absolute top-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white border border-white/10"
+                >
+                  Vol. III
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3
+                  class="text-lg font-display font-bold text-white group-hover:text-accent-blue transition-colors"
+                >
+                  The Psyche
+                </h3>
+                <p class="text-sm text-gray-500">Dr. J. Carvalho</p>
+                <button
+                  class="mt-3 text-xs font-bold uppercase tracking-wider text-accent-blue hover:text-white transition-colors flex items-center gap-1"
+                >
+                  View Preview
+                  <span class="material-symbols-outlined text-[14px]"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Volume 4 -->
+            <div class="group relative flex flex-col gap-4">
+              <div
+                class="aspect-[2/3] w-full rounded-lg overflow-hidden relative shadow-lg bg-gray-800"
+              >
+                <img
+                  alt="Volume IV Book Cover"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTUBv4yA3fzfU9kwf03y7zfO6kTGkAq1tDzmjjAhZZJpnXIH4mm5NVpYSwdxeUvNFJcgOFR3HSZGFDnklancnZZS6l9j7Nm5DosMiLnrjE5LSddqjCxUlzd-DP18jHwJd_5CmBuRKcNZLy9ePQ_4lh4nknQuTHFOWd_Ojlc7LpsnoiM2zJsMkKU3D59RDwWaxNyazJjEhyj75-9JCpS-w5VkWt-HI2ZdfL_SgDEycpQy6gh12qYZjkLsE7OJimd0OOoeOoFhcr7Dqf"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"
+                ></div>
+                <div
+                  class="absolute top-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white border border-white/10"
+                >
+                  Vol. IV
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3
+                  class="text-lg font-display font-bold text-white group-hover:text-accent-blue transition-colors"
+                >
+                  Healing
+                </h3>
+                <p class="text-sm text-gray-500">Dr. J. Carvalho</p>
+                <button
+                  class="mt-3 text-xs font-bold uppercase tracking-wider text-accent-blue hover:text-white transition-colors flex items-center gap-1"
+                >
+                  View Preview
+                  <span class="material-symbols-outlined text-[14px]"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+            <!-- Volume 5 -->
+            <div class="group relative flex flex-col gap-4">
+              <div
+                class="aspect-[2/3] w-full rounded-lg overflow-hidden relative shadow-lg bg-gray-800"
+              >
+                <img
+                  alt="Volume V Book Cover"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl3VaVLNNUwkrXrXx_z13AFKwlD_VQU5i6SyMuNiIAeAps4zvJnkkfi9Zo931jWnBRfPWtWLY_0jCWzq1q1aq09SpYSoxpRcu3tEkd4VgBq51ZukxBQ_kWYAihrQrJ2Xo8xEAlpsQ-qTSh1qGDthEZu66CWnyMW9_-gnzUqbWOWx_J4pnczFwYSS8KRnNnfpJzMQuESn6J59ky1PNLakM4TD7QLetCEesGMA9ylXTAHTJNueAy0cW9XXs6bw3tlXFcviaHYI_kmpFQ"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"
+                ></div>
+                <div
+                  class="absolute top-3 right-3 bg-black/60 backdrop-blur-sm px-2 py-1 rounded text-xs font-bold text-white border border-white/10"
+                >
+                  Vol. V
+                </div>
+              </div>
+              <div class="flex flex-col gap-1">
+                <h3
+                  class="text-lg font-display font-bold text-white group-hover:text-accent-blue transition-colors"
+                >
+                  Ascension
+                </h3>
+                <p class="text-sm text-gray-500">Dr. J. Carvalho</p>
+                <button
+                  class="mt-3 text-xs font-bold uppercase tracking-wider text-accent-blue hover:text-white transition-colors flex items-center gap-1"
+                >
+                  View Preview
+                  <span class="material-symbols-outlined text-[14px]"
+                    >visibility</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Bio / Author Section -->
+      <section class="py-24 px-6 relative overflow-hidden" id="bio">
+        <!-- Background Texture -->
+        <div
+          class="absolute right-0 top-0 bottom-0 w-1/2 bg-gradient-to-l from-primary/10 to-transparent pointer-events-none"
+        ></div>
+        <div
+          class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10"
+        >
+          <div class="relative">
+            <div
+              class="aspect-square rounded-full overflow-hidden border-2 border-primary/30 max-w-sm mx-auto"
+            >
+              <img
+                alt="Portrait of Dr. J. Carvalho"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUJEy37oWoFxc_9mVtZVldiPu_T0o4rKL4UXO2dV_UFOKw_gYD3WuF7HxQlweEKE0wqdcoqqaZnpl2g4n-fgCgR3iJ9ZiIEm5lXCjAJqDUVqB9jS7NN_SpYCd_lOs3yWBFpbtzxAO4Z8xMtFClQSX9XnxSYUXq82hMDCGfJGrUHXAWTlrpN1V7npnYSr-SlFdDaA6HwrujW7v3LTNDjrADHywhs97MthEUBs9PZqfvr0WS5L05aWZx5hoQxl3qwJUFLmtVYGrQij2z"
+              />
+            </div>
+            <div
+              class="absolute -bottom-4 -right-4 bg-background-card p-4 rounded-xl border border-white/10 shadow-xl hidden md:block"
+            >
+              <p class="text-accent-blue text-2xl font-bold font-display">
+                25+
+              </p>
+              <p class="text-xs text-gray-400 uppercase tracking-wide">
+                Years of Research
+              </p>
+            </div>
+          </div>
+          <div>
+            <h2 class="font-display text-3xl font-bold mb-6">
+              About the Author
+            </h2>
+            <p class="text-gray-300 leading-relaxed mb-6 font-light">
+              Dr. J. Carvalho has dedicated over two decades to the study of
+              bioenergy and spiritual mechanics. His work bridges the gap
+              between ancient esoteric wisdom and modern quantum understanding.
+            </p>
+            <p class="text-gray-300 leading-relaxed mb-8 font-light">
+              The Apometria Trilogy is the culmination of his life's work—a
+              structured, safe, and profound approach to understanding the
+              multidimensional nature of the human psyche.
+            </p>
+            <a
+              class="text-white border-b border-primary hover:text-primary transition-colors pb-1 inline-flex items-center gap-2"
+              href="#"
+            >
+              Read Full Biography
+              <span class="material-symbols-outlined text-[18px]"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Testimonials -->
+      <section class="py-20 px-6 bg-background-card/30 border-y border-white/5">
+        <div class="max-w-7xl mx-auto">
+          <h2
+            class="font-display text-2xl md:text-3xl font-bold text-center mb-12"
+          >
+            Voices from the Community
+          </h2>
+          <div class="flex overflow-x-auto no-scrollbar snap-x gap-6 pb-8">
+            <!-- Testimonial 1 -->
+            <div
+              class="min-w-[300px] md:min-w-[400px] snap-center bg-background-card p-8 rounded-xl border border-white/5 flex flex-col gap-4 hover:border-primary/30 transition-colors"
+            >
+              <div class="flex gap-1 text-accent-blue">
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+              </div>
+              <p class="text-gray-300 italic leading-relaxed">
+                "A masterpiece of spiritual knowledge. It completely changed my
+                perspective on energy healing and the laws of the universe."
+              </p>
+              <div class="mt-auto flex items-center gap-3">
+                <div class="size-10 rounded-full bg-gray-700 overflow-hidden">
+                  <img
+                    alt="User avatar"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2LCw7h8KFzh6_Jzt0tFre_jjraDhe7LrSXLKWnqBMmeHCufHwWY1w2zU9225X2IqdGub5mzz-02VtfrKxxOM83LDV5ZsJ_wLs87J1kzZXRu9iOWc8HWui1YWz5j_YYPk8M75JlDWAoZKKDDndwJfGS6x7RmpkK92qnloy_r795yqMnPT4TtiFbl8Kywfw_M725h5dBYFt2Jwf5FfxyKj6gfrPF3MJgSx1cxuKglN7Sfm3u9VUR8QR8WY6Kx9zsNFSE3OolSqY04c8"
+                  />
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-white">Elena R.</p>
+                  <p class="text-xs text-gray-500">Therapist</p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div
+              class="min-w-[300px] md:min-w-[400px] snap-center bg-background-card p-8 rounded-xl border border-white/5 flex flex-col gap-4 hover:border-primary/30 transition-colors"
+            >
+              <div class="flex gap-1 text-accent-blue">
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+              </div>
+              <p class="text-gray-300 italic leading-relaxed">
+                "Indispensable for any serious student of the occult. The
+                clarity in Volume III specifically is unmatched."
+              </p>
+              <div class="mt-auto flex items-center gap-3">
+                <div class="size-10 rounded-full bg-gray-700 overflow-hidden">
+                  <img
+                    alt="User avatar"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUJ-TkcNeXZHRRBCIoJsYPSrRClxdHi31lL8Bz0hJFZDPCMU9H7lLX0M6eugcLb_tJfrR6jTmT23eamhJt9obqLkJw60LWFluGwcmJLYBwFGEw1qoh48XnO7uJIxbz-8MJEb8keysLcszvikqkQ1P_OnBYlYQeDV86gwnFzP1bBMpCUbtaCl08Z80Tlcw-9YFDlTpLNHOe4KOMS0nluDmNwTsz6F3b79a5zge_-LPFuVPird1FV-c6YVfhKbyOdNg8XNW1X8s8PxWd"
+                  />
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-white">Marcus T.</p>
+                  <p class="text-xs text-gray-500">Researcher</p>
+                </div>
+              </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div
+              class="min-w-[300px] md:min-w-[400px] snap-center bg-background-card p-8 rounded-xl border border-white/5 flex flex-col gap-4 hover:border-primary/30 transition-colors"
+            >
+              <div class="flex gap-1 text-accent-blue">
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+                <span class="material-symbols-outlined text-[20px]">star</span>
+              </div>
+              <p class="text-gray-300 italic leading-relaxed">
+                "Finally, a guide that balances theory with practice. The
+                techniques in Volume II are practical and safe."
+              </p>
+              <div class="mt-auto flex items-center gap-3">
+                <div class="size-10 rounded-full bg-gray-700 overflow-hidden">
+                  <img
+                    alt="User avatar"
+                    class="w-full h-full object-cover"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuARo0riHy7WgcsLWGaOBlM1JcvFyy369ROVTTvgbrb36SksIBtdxz34NwGNtV27tQyoSRJrkrsojNGUl_F5LJhJ_Ciy0jCx5Em5_vcS8_v_fOtXxqz0sa3KxLoDsb3PkdgAZ9NtQroR37izSJjsochxhdQ4TOLoTJmUZyewtv-QSBNjfMUEZYe_M0hz8NsfZu_B_pIqn3MB_VfeA8vIBg1-W5vck2LLjZhvKa6xnFkct7k_yD_G4CKCJTKotR8qxoY8sDPMDUChHAEj"
+                  />
+                </div>
+                <div>
+                  <p class="text-sm font-bold text-white">Sarah L.</p>
+                  <p class="text-xs text-gray-500">Healer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- CTA Section -->
+      <section class="py-24 px-6 relative">
+        <div class="absolute inset-0 bg-accent-gradient opacity-10"></div>
+        <div
+          class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-8"
+        >
+          <span class="material-symbols-outlined text-6xl text-primary/50"
+            >menu_book</span
+          >
+          <h2 class="font-display text-4xl md:text-5xl font-bold leading-tight">
+            Ready to Begin Your Journey?
+          </h2>
+          <p class="text-gray-300 text-lg max-w-2xl">
+            Get the complete Apometria Trilogy today and receive exclusive
+            access to the digital companion guide.
+          </p>
+          <button
+            class="h-14 px-10 rounded-full bg-accent-gradient hover:brightness-110 text-white font-display text-lg font-bold flex items-center justify-center gap-3 shadow-2xl shadow-primary/40 transition-all transform hover:scale-105"
+          >
+            Acquire the Complete Trilogy
+            <span class="material-symbols-outlined">shopping_bag</span>
+          </button>
+          <p class="text-xs text-gray-500 mt-4">
+            Available in Hardcover, Paperback, and Digital formats.
+          </p>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 py-12 px-6 text-sm">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div class="flex flex-col gap-4">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-[24px]"
+              >auto_awesome</span
+            >
+            <span class="font-display font-bold text-lg text-white"
+              >Apometria</span
+            >
+          </div>
+          <p class="text-gray-500">
+            Illuminating the path to spiritual understanding through science and
+            soul.
+          </p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <h4 class="font-bold text-white mb-2">Shop</h4>
+          <a class="text-gray-500 hover:text-white transition-colors" href="#"
+            >All Volumes</a
+          >
+          <a class="text-gray-500 hover:text-white transition-colors" href="#"
+            >Bundles</a
+          >
+          <a class="text-gray-500 hover:text-white transition-colors" href="#"
+            >Merchandise</a
+          >
+        </div>
+        <div class="flex flex-col gap-3">
+          <h4 class="font-bold text-white mb-2">Support</h4>
+          <a class="text-gray-500 hover:text-white transition-colors" href="#"
+            >FAQ</a
+          >
+          <a class="text-gray-500 hover:text-white transition-colors" href="#"
+            >Contact Us</a
+          >
+          <a class="text-gray-500 hover:text-white transition-colors" href="#"
+            >Shipping &amp; Returns</a
+          >
+        </div>
+        <div class="flex flex-col gap-3">
+          <h4 class="font-bold text-white mb-2">Stay Updated</h4>
+          <form class="flex gap-2">
+            <input
+              class="bg-white/5 border border-white/10 rounded px-3 py-2 text-white w-full focus:outline-none focus:border-primary transition-colors"
+              placeholder="Your email"
+              type="email"
+            />
+            <button
+              class="bg-primary/20 hover:bg-primary text-white p-2 rounded border border-primary/50 transition-colors"
+            >
+              <span class="material-symbols-outlined text-[18px]">send</span>
+            </button>
+          </form>
+        </div>
+      </div>
+      <div
+        class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600"
+      >
+        <p>© 2023 Apometria Trilogy. All rights reserved.</p>
+        <div class="flex gap-6">
+          <a class="hover:text-white transition-colors" href="#"
+            >Privacy Policy</a
+          >
+          <a class="hover:text-white transition-colors" href="#"
+            >Terms of Service</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

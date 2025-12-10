@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Shopping Cart - Apometria</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#660099",
+              "accent-blue": "#3b82f6",
+              "background-dark": "#0B0B15",
+              "background-card": "#151520",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Sora", "sans-serif"],
+              signature: [
+                "cursive",
+              ] /* Fallback if needed, though we might use an SVG */,
+            },
+            backgroundImage: {
+              "cosmic-gradient":
+                "radial-gradient(circle at 50% 0%, #2a1b3d 0%, #0B0B15 60%)",
+              "accent-gradient":
+                "linear-gradient(135deg, #3b82f6 0%, #660099 100%)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white antialiased selection:bg-primary selection:text-white"
+  >
+    <!-- Main Container -->
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <!-- Cosmic Background Effect -->
+      <div
+        class="fixed inset-0 z-0 bg-cosmic pointer-events-none opacity-80"
+      ></div>
+      <!-- Navbar -->
+      <header
+        class="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200 dark:border-[#232f48] bg-white/80 dark:bg-[#111722]/90 backdrop-blur-md px-6 py-4 lg:px-12"
+      >
+        <div class="flex items-center gap-4">
+          <div
+            class="flex items-center justify-center size-8 text-primary dark:text-white"
+          >
+            <span class="material-symbols-outlined text-3xl">auto_stories</span>
+          </div>
+          <h2 class="text-xl font-bold tracking-tight">Apometria</h2>
+        </div>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="./Review.html"
+            >Books</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="./Bio.html"
+            >About</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#"
+            >Contact</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <button
+            class="relative flex items-center justify-center size-10 rounded-full hover:bg-slate-100 dark:hover:bg-[#232f48] transition-colors"
+          >
+            <span
+              class="material-symbols-outlined text-slate-700 dark:text-white"
+              >shopping_cart</span
+            >
+            <span
+              class="absolute top-1 right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white"
+              >3</span
+            >
+          </button>
+        </div>
+      </header>
+      <!-- Page Content -->
+      <main class="relative z-10 flex-grow px-4 py-8 lg:px-12 xl:px-24">
+        <div class="mx-auto max-w-7xl">
+          <!-- Page Title -->
+          <div class="mb-8">
+            <h1 class="text-3xl font-black tracking-tight sm:text-4xl mb-2">
+              Your Cart
+            </h1>
+            <p class="text-slate-500 dark:text-slate-400">
+              Review your selected volumes before proceeding.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Cart Items List (Left Column) -->
+            <div class="lg:col-span-8 flex flex-col gap-4">
+              <!-- Item 1 -->
+              <div
+                class="group flex flex-col sm:flex-row gap-6 bg-white dark:bg-[#161e2c] border border-slate-200 dark:border-[#232f48] p-4 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300"
+              >
+                <!-- Image -->
+                <div class="shrink-0 w-full sm:w-[100px]">
+                  <div
+                    class="aspect-[2/3] w-full bg-slate-800 rounded-lg bg-cover bg-center shadow-md group-hover:scale-[1.02] transition-transform duration-500"
+                    data-alt="Apometria Volume 1 Book Cover"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDARItwjfyK0ggw3cd4MfRURt61pn2Qpkl_0KFIAfcskHALkf8oV93EfGcbNbMyAzlzI0-PXNgvAXWv21SXOWAQb7TiDprfPTYh4KKARFfJ6zSYDaA0XDRxm4pwUoY5wMlCEfI1hizvZyO4MmW2fI8o5KOjHVGJzVVDfKvsnYgCpKoC4sS2fCZDKG-FIRIGRTq9Rv2gkKvYXbG0qIE5_m3ceU6mGDxFSR3vnujjFT9C0WuzlyOx5AxyDekE3uT32239SvQf4B6ijtsu');
+                    "
+                  ></div>
+                </div>
+                <!-- Content -->
+                <div class="flex flex-1 flex-col justify-between">
+                  <div class="flex justify-between items-start gap-4">
+                    <div>
+                      <h3
+                        class="text-lg font-bold leading-snug text-slate-900 dark:text-white"
+                      >
+                        Apometria: The Awakening (Vol 1)
+                      </h3>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400 mt-1"
+                      >
+                        Hardcover • First Edition
+                      </p>
+                    </div>
+                    <p
+                      class="text-lg font-semibold text-slate-900 dark:text-white whitespace-nowrap"
+                    >
+                      $29.99
+                    </p>
+                  </div>
+                  <div class="flex justify-between items-end mt-4 sm:mt-0">
+                    <!-- Quantity -->
+                    <div
+                      class="flex items-center gap-3 bg-slate-100 dark:bg-[#232f48] rounded-lg px-2 py-1"
+                    >
+                      <button
+                        aria-label="Decrease quantity"
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-sm font-bold"
+                          >remove</span
+                        >
+                      </button>
+                      <input
+                        class="w-8 bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-slate-900 dark:text-white appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none"
+                        min="1"
+                        type="number"
+                        value="1"
+                      />
+                      <button
+                        aria-label="Increase quantity"
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-sm font-bold"
+                          >add</span
+                        >
+                      </button>
+                    </div>
+                    <!-- Remove Action -->
+                    <button
+                      class="flex items-center gap-1 text-xs font-medium text-slate-400 hover:text-red-400 transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-lg"
+                        >delete</span
+                      >
+                      <span class="hidden sm:inline">Remove</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div
+                class="group flex flex-col sm:flex-row gap-6 bg-white dark:bg-[#161e2c] border border-slate-200 dark:border-[#232f48] p-4 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300"
+              >
+                <div class="shrink-0 w-full sm:w-[100px]">
+                  <div
+                    class="aspect-[2/3] w-full bg-slate-800 rounded-lg bg-cover bg-center shadow-md group-hover:scale-[1.02] transition-transform duration-500"
+                    data-alt="Apometria Volume 2 Book Cover"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3z8tj2Dsu98U3RwOyFkXQ_4yWG7puKXeevpr5_PbWzH4PrU5NkCkWPRuqZydtNUPwfpM__OVQsONO33dzjkEdtu3hI8OEIVWxwxkWXQX9Ow7Yn7AKJ2oIE7k5aE_jIvWKh2Ek9C46ZhpZzj19cJEcdgCSRQPByjVvF-Fj63LCWNPUDtAwO_mIcJtGTNlJBbKSlwVumjeKGbCo5f2b6jCVo_9RG2mBl9-QKY1mWgfNKr6Mlt4Hwb2gzC7bjshR1jp4Re41V0A_LoRK');
+                    "
+                  ></div>
+                </div>
+                <div class="flex flex-1 flex-col justify-between">
+                  <div class="flex justify-between items-start gap-4">
+                    <div>
+                      <h3
+                        class="text-lg font-bold leading-snug text-slate-900 dark:text-white"
+                      >
+                        Apometria: The Ascension (Vol 2)
+                      </h3>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400 mt-1"
+                      >
+                        Hardcover • First Edition
+                      </p>
+                    </div>
+                    <p
+                      class="text-lg font-semibold text-slate-900 dark:text-white whitespace-nowrap"
+                    >
+                      $29.99
+                    </p>
+                  </div>
+                  <div class="flex justify-between items-end mt-4 sm:mt-0">
+                    <div
+                      class="flex items-center gap-3 bg-slate-100 dark:bg-[#232f48] rounded-lg px-2 py-1"
+                    >
+                      <button
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-sm font-bold"
+                          >remove</span
+                        >
+                      </button>
+                      <input
+                        class="w-8 bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-slate-900 dark:text-white appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none"
+                        min="1"
+                        type="number"
+                        value="1"
+                      />
+                      <button
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-sm font-bold"
+                          >add</span
+                        >
+                      </button>
+                    </div>
+                    <button
+                      class="flex items-center gap-1 text-xs font-medium text-slate-400 hover:text-red-400 transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-lg"
+                        >delete</span
+                      >
+                      <span class="hidden sm:inline">Remove</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 3 -->
+              <div
+                class="group flex flex-col sm:flex-row gap-6 bg-white dark:bg-[#161e2c] border border-slate-200 dark:border-[#232f48] p-4 rounded-xl shadow-sm hover:border-primary/30 transition-all duration-300"
+              >
+                <div class="shrink-0 w-full sm:w-[100px]">
+                  <div
+                    class="aspect-[2/3] w-full bg-slate-800 rounded-lg bg-cover bg-center shadow-md group-hover:scale-[1.02] transition-transform duration-500"
+                    data-alt="Apometria Trilogy Bundle Cover"
+                    style="
+                      background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMogRL_36TJzH47xsEFY0DT9C7Ptwo8PCAgbl7LoHzDEq57LYt-ffxxmL_GkufJn3kxcfjb4c2VFodkngCdl1jlCAz0-oN4aHZ96jvUGvqI0ip0053LvYn5_o11KbeWjJiJE4FfuUjqQeRVVhNQtoNnmoR60HdjOFuCsZIiKhJPlTcvgTCJRQJgHfYEJR-rbbZnktPzNj_s5MwpPU7c1bS0ewSw75liFyattnQqdtRXd6Dk7hUXSdPi5ozKjJ-TQrXzmg-f5PaJVCY');
+                    "
+                  ></div>
+                </div>
+                <div class="flex flex-1 flex-col justify-between">
+                  <div class="flex justify-between items-start gap-4">
+                    <div>
+                      <h3
+                        class="text-lg font-bold leading-snug text-slate-900 dark:text-white"
+                      >
+                        Complete Trilogy Bundle
+                      </h3>
+                      <p
+                        class="text-sm text-slate-500 dark:text-slate-400 mt-1"
+                      >
+                        Special Edition Box Set
+                      </p>
+                      <span
+                        class="inline-flex items-center rounded-md bg-green-500/10 px-2 py-1 text-xs font-medium text-green-500 ring-1 ring-inset ring-green-500/20 mt-2"
+                        >15% Savings</span
+                      >
+                    </div>
+                    <p
+                      class="text-lg font-semibold text-slate-900 dark:text-white whitespace-nowrap"
+                    >
+                      $75.00
+                    </p>
+                  </div>
+                  <div class="flex justify-between items-end mt-4 sm:mt-0">
+                    <div
+                      class="flex items-center gap-3 bg-slate-100 dark:bg-[#232f48] rounded-lg px-2 py-1"
+                    >
+                      <button
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-sm font-bold"
+                          >remove</span
+                        >
+                      </button>
+                      <input
+                        class="w-8 bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-slate-900 dark:text-white appearance-none [&amp;::-webkit-inner-spin-button]:appearance-none"
+                        min="1"
+                        type="number"
+                        value="1"
+                      />
+                      <button
+                        class="flex items-center justify-center size-8 rounded-md hover:bg-white dark:hover:bg-[#111722] text-slate-600 dark:text-white transition-colors"
+                      >
+                        <span
+                          class="material-symbols-outlined text-sm font-bold"
+                          >add</span
+                        >
+                      </button>
+                    </div>
+                    <button
+                      class="flex items-center gap-1 text-xs font-medium text-slate-400 hover:text-red-400 transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-lg"
+                        >delete</span
+                      >
+                      <span class="hidden sm:inline">Remove</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Order Summary (Right Column) -->
+            <div class="lg:col-span-4">
+              <div
+                class="sticky top-28 flex flex-col gap-6 bg-white dark:bg-[#161e2c] border border-slate-200 dark:border-[#232f48] rounded-xl p-6 shadow-lg"
+              >
+                <h2 class="text-xl font-bold text-slate-900 dark:text-white">
+                  Order Summary
+                </h2>
+                <div
+                  class="flex flex-col gap-3 pb-6 border-b border-slate-200 dark:border-[#232f48]"
+                >
+                  <div
+                    class="flex justify-between text-sm text-slate-500 dark:text-slate-400"
+                  >
+                    <span>Subtotal</span>
+                    <span class="font-medium text-slate-900 dark:text-white"
+                      >$134.98</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between text-sm text-slate-500 dark:text-slate-400"
+                  >
+                    <span>Shipping estimate</span>
+                    <span class="font-medium text-green-500">Free</span>
+                  </div>
+                  <div
+                    class="flex justify-between text-sm text-slate-500 dark:text-slate-400"
+                  >
+                    <span>Tax estimate</span>
+                    <span class="font-medium text-slate-900 dark:text-white"
+                      >$10.80</span
+                    >
+                  </div>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span
+                    class="text-base font-medium text-slate-900 dark:text-white"
+                    >Order Total</span
+                  >
+                  <span
+                    class="text-2xl font-black text-slate-900 dark:text-white"
+                    >$145.78</span
+                  >
+                </div>
+                <!-- CTA Button with Gradient -->
+                <button
+                  class="group relative flex w-full items-center justify-center gap-2 overflow-hidden rounded-lg bg-gradient-to-r from-blue-600 to-purple-600 p-4 font-bold text-white shadow-lg shadow-blue-500/25 transition-all duration-300 hover:scale-[1.02] hover:shadow-blue-500/40"
+                >
+                  <div
+                    class="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-300"
+                  ></div>
+                  <span class="relative z-10">Proceed to Checkout</span>
+                  <span
+                    class="relative z-10 material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform"
+                    >arrow_forward</span
+                  >
+                </button>
+                <!-- Trust Badges -->
+                <div class="flex flex-col items-center gap-3 mt-2">
+                  <div
+                    class="flex items-center gap-2 text-xs text-slate-400 uppercase tracking-wider font-semibold"
+                  >
+                    <span class="material-symbols-outlined text-sm">lock</span>
+                    Secure Checkout
+                  </div>
+                  <div
+                    class="flex gap-4 opacity-50 grayscale hover:grayscale-0 transition-all duration-300"
+                  >
+                    <!-- Simple CSS Shapes to represent Cards as placeholders since external SVG icons can be messy -->
+                    <div
+                      class="h-6 w-10 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center text-[8px] font-bold text-slate-500"
+                    >
+                      VISA
+                    </div>
+                    <div
+                      class="h-6 w-10 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center text-[8px] font-bold text-slate-500"
+                    >
+                      MC
+                    </div>
+                    <div
+                      class="h-6 w-10 bg-slate-200 dark:bg-slate-700 rounded flex items-center justify-center text-[8px] font-bold text-slate-500"
+                    >
+                      AMEX
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

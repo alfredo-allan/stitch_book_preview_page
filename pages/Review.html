@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Apometria Trilogy - Vol 1 Preview</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Sora:wght@100..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Symbols -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#a413ec",
+              secondary: "#3c2348",
+              "background-light": "#f7f6f8",
+              "background-dark": "#0f0f12",
+              "surface-dark": "#1c1122",
+            },
+            fontFamily: {
+              display: ["Space Grotesk", "sans-serif"],
+              body: ["Sora", "sans-serif"],
+            },
+            backgroundImage: {
+              "cosmic-gradient":
+                "radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, rgba(102, 0, 153, 0.05) 40%, rgba(28, 15, 35, 0) 70%)",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for the preview area */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 8px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(102, 0, 153, 0.5);
+        border-radius: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(102, 0, 153, 0.8);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-dark text-white font-display min-h-screen flex flex-col antialiased selection:bg-primary/50 selection:text-white overflow-x-hidden"
+  >
+    <!-- Subtle Cosmic Background Overlay -->
+    <div class="fixed inset-0 pointer-events-none bg-cosmic-gradient z-0"></div>
+    <!-- Navigation -->
+    <header
+      class="sticky top-0 z-50 w-full border-b border-white/10 bg-[#1d0f24]/90 backdrop-blur-md"
+    >
+      <div
+        class="px-4 md:px-10 py-3 max-w-7xl mx-auto flex items-center justify-between"
+      >
+        <div class="flex items-center gap-8">
+          <div
+            class="flex items-center gap-4 text-white hover:opacity-80 transition-opacity cursor-pointer"
+          >
+            <div class="size-8 text-primary">
+              <span class="material-symbols-outlined text-[32px]"
+                >auto_stories</span
+              >
+            </div>
+            <h2
+              class="text-white text-lg font-bold leading-tight tracking-tight"
+            >
+              Apometria Trilogy
+            </h2>
+          </div>
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              class="text-white/70 hover:text-white text-sm font-medium transition-colors"
+              href="../index..html"
+              >Home</a
+            >
+            <a
+              class="text-white text-sm font-medium transition-colors"
+              href="./Review.html"
+              >Books</a
+            >
+            <a
+              class="text-white/70 hover:text-white text-sm font-medium transition-colors"
+              href="./Bio.html"
+              >About</a
+            >
+            <a
+              class="text-white/70 hover:text-white text-sm font-medium transition-colors"
+              href="#"
+              >Contact</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-6">
+          <div class="hidden md:flex relative group">
+            <div
+              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+            >
+              <span class="material-symbols-outlined text-[#b88dce] text-[20px]"
+                >search</span
+              >
+            </div>
+            <input
+              class="bg-[#3d204b]/50 border border-transparent focus:border-primary/50 text-white text-sm rounded-lg block w-full pl-10 p-2 placeholder-[#b88dce] focus:ring-0 transition-all w-64"
+              placeholder="Search volumes..."
+              type="text"
+            />
+          </div>
+          <div class="flex gap-3">
+            <button
+              class="flex items-center justify-center size-10 rounded-lg bg-[#3d204b] text-white hover:bg-[#4d295e] transition-colors relative"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >shopping_cart</span
+              >
+              <span
+                class="absolute -top-1 -right-1 size-4 bg-accent-blue rounded-full text-[10px] flex items-center justify-center font-bold"
+                >2</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Main Content Wrapper -->
+    <main
+      class="relative z-10 flex-1 flex flex-col max-w-7xl mx-auto w-full px-4 md:px-10 py-6 md:py-10"
+    >
+      <!-- Breadcrumbs -->
+      <nav class="flex items-center gap-2 mb-8 text-sm">
+        <a class="text-[#b88dce] hover:text-white transition-colors" href="#"
+          >Home</a
+        >
+        <span class="text-[#b88dce]/50">/</span>
+        <a class="text-[#b88dce] hover:text-white transition-colors" href="#"
+          >Books</a
+        >
+        <span class="text-[#b88dce]/50">/</span>
+        <span class="text-white font-medium">Volume 1</span>
+      </nav>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <!-- LEFT COLUMN: Book Cover & Actions -->
+        <div class="lg:col-span-4 flex flex-col gap-6 sticky top-24">
+          <!-- Book Cover Container with 3D effect -->
+          <div
+            class="relative group perspective-1000 w-full max-w-sm mx-auto lg:mx-0"
+          >
+            <div
+              class="relative aspect-[2/3] w-full rounded-lg shadow-2xl shadow-primary/30 transform transition-transform duration-500 group-hover:scale-[1.02] bg-[#1a1a1a] overflow-hidden border border-white/5"
+            >
+              <img
+                class="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity"
+                data-alt="Apometria Volume 1 Book Cover showing abstract cosmic nebula art"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnTwwDIGz9c2APIXsqqDPJD-0IOB_qx6zcfy-d-EihRjCAC3jVwgjTItYhK0x83_B6k5xn_2Si78Ny5QDV93hNAL6Sv6GYdnK_hzwxgJVXosGE6DnEntuGam9pTUidVb-RbrElr_u3eA11ze-cL9b6HRK_mhdSsyL0XGNdy4HOAfkttUL_h5jv7VNtOvytnjPkHZad4VFQmV88Efddn2S0IJN3xB-b1PUutiMQDhFFWEQ_lP5t-l9ATCUCLscWPFrRgqbBzmSwM7cN"
+              />
+              <!-- Overlay Gradient -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"
+              ></div>
+              <!-- Badge -->
+              <div
+                class="absolute top-4 right-4 bg-accent-blue/90 backdrop-blur text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg"
+              >
+                Best Seller
+              </div>
+            </div>
+          </div>
+          <!-- Price & Main CTA -->
+          <div class="flex flex-col gap-4 mt-2">
+            <div class="flex items-end justify-between px-1">
+              <div class="flex flex-col">
+                <span class="text-[#b88dce] text-sm">Digital Edition</span>
+                <span class="text-3xl font-bold text-white">$29.99</span>
+              </div>
+              <div class="flex flex-col items-end">
+                <span class="text-[#b88dce] text-sm line-through">$39.99</span>
+                <span class="text-green-400 text-xs font-medium">Save 25%</span>
+              </div>
+            </div>
+            <button
+              class="w-full h-14 rounded-xl bg-gradient-to-r from-accent-blue to-primary text-white font-bold text-lg shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+            >
+              <span>Add to Cart</span>
+              <span class="material-symbols-outlined">shopping_bag</span>
+            </button>
+            <button
+              class="w-full h-12 rounded-xl border border-white/10 bg-white/5 text-white font-medium hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+            >
+              <span>Read Sample</span>
+              <span class="material-symbols-outlined text-sm">menu_book</span>
+            </button>
+          </div>
+          <!-- Metadata Grid -->
+          <div
+            class="grid grid-cols-2 gap-4 border-t border-white/10 pt-6 mt-2"
+          >
+            <div
+              class="flex flex-col p-3 rounded-lg bg-white/5 border border-white/5"
+            >
+              <span class="text-[#b88dce] text-xs uppercase tracking-wider mb-1"
+                >Pages</span
+              >
+              <span class="text-white font-medium">340</span>
+            </div>
+            <div
+              class="flex flex-col p-3 rounded-lg bg-white/5 border border-white/5"
+            >
+              <span class="text-[#b88dce] text-xs uppercase tracking-wider mb-1"
+                >Published</span
+              >
+              <span class="text-white font-medium">Oct 2023</span>
+            </div>
+            <div
+              class="flex flex-col p-3 rounded-lg bg-white/5 border border-white/5 col-span-2"
+            >
+              <span class="text-[#b88dce] text-xs uppercase tracking-wider mb-1"
+                >ISBN</span
+              >
+              <span class="text-white font-medium font-mono text-sm"
+                >978-3-16-148410-0</span
+              >
+            </div>
+          </div>
+        </div>
+        <!-- RIGHT COLUMN: Content Preview -->
+        <div class="lg:col-span-8 flex flex-col gap-8">
+          <!-- Header Section -->
+          <div class="flex flex-col gap-6 border-b border-white/10 pb-8">
+            <div class="flex flex-col gap-2">
+              <div class="flex items-center gap-3 mb-2">
+                <span
+                  class="px-3 py-1 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider"
+                  >Volume 1</span
+                >
+                <div class="flex text-yellow-500 gap-0.5">
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-[16px] fill-current"
+                    >star_half</span
+                  >
+                </div>
+                <span class="text-[#b88dce] text-xs">(128 reviews)</span>
+              </div>
+              <h1
+                class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight"
+              >
+                The Unveiling <br /><span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-white to-[#b88dce]"
+                  >of the Spirit</span
+                >
+              </h1>
+              <p class="text-xl text-[#b88dce] font-light mt-2 max-w-2xl">
+                A comprehensive guide to multidimensional healing, spiritual
+                alignment, and the unseen mechanics of the universe.
+              </p>
+            </div>
+            <!-- Author Compact Bio -->
+            <div
+              class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5 max-w-md"
+            >
+              <img
+                class="size-12 rounded-full object-cover ring-2 ring-primary/50"
+                data-alt="Author portrait"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl21FZ0e5CFRdDaMB5z3-fesmKUW-2HAlZAipravN9OfS-PtN2ItWy9IBwu9ZnkhFE5UhJMj9OEvcmiOeMd4vavPTIZJANbFwTyhsnEOb7vSIvnrKQClBrgKAC3lOjDDMjmyidWJIG6JNaqL6mVTQz8xWK9v0v4_NwCX2U1RyrcZJNqhec4fjeVYVJ0SdtR2JtulnBAVNHJdEIbfCY8kJ6syT9D-VKrnz0OzTZsPkQdyZUq1XqzWP8R9pzqlsoYN7vJ_MBry--a76B"
+              />
+              <div>
+                <p class="text-white text-sm font-bold">Dr. Aris Thorne</p>
+                <p class="text-[#b88dce] text-xs">
+                  Spiritual Researcher &amp; Author
+                </p>
+              </div>
+              <button
+                class="ml-auto text-xs font-bold text-accent-blue hover:text-white transition-colors"
+              >
+                View Profile
+              </button>
+            </div>
+          </div>
+          <!-- Tabbed Preview Area -->
+          <div class="flex flex-col w-full h-full min-h-[500px]">
+            <div
+              class="flex items-center gap-6 border-b border-white/10 mb-6 overflow-x-auto"
+            >
+              <button
+                class="pb-3 px-1 text-white border-b-2 border-primary font-medium text-sm whitespace-nowrap"
+              >
+                Introduction
+              </button>
+              <button
+                class="pb-3 px-1 text-[#b88dce] hover:text-white border-b-2 border-transparent hover:border-white/20 font-medium text-sm transition-all whitespace-nowrap"
+              >
+                Chapter 1: Awareness
+              </button>
+              <button
+                class="pb-3 px-1 text-[#b88dce] hover:text-white border-b-2 border-transparent hover:border-white/20 font-medium text-sm transition-all whitespace-nowrap"
+              >
+                Table of Contents
+              </button>
+              <button
+                class="pb-3 px-1 text-[#b88dce] hover:text-white border-b-2 border-transparent hover:border-white/20 font-medium text-sm transition-all whitespace-nowrap"
+              >
+                Index
+              </button>
+            </div>
+            <!-- Text Content -->
+            <div
+              class="relative bg-[#150b1a] rounded-xl border border-white/5 p-6 md:p-10 shadow-inner overflow-hidden"
+            >
+              <!-- Scrollable Text Area -->
+              <div
+                class="h-[600px] overflow-y-auto custom-scrollbar pr-4 font-body text-gray-300 leading-relaxed text-base md:text-lg space-y-6"
+              >
+                <h3 class="font-display text-2xl text-white font-bold mb-4">
+                  Introduction: The Threshold of Perception
+                </h3>
+                <p>
+                  The universe is not silent; it is merely waiting for the right
+                  frequency to be heard. For centuries, humanity has looked
+                  upward, seeking gods in the clouds and meaning in the stars,
+                  yet the most profound frontier lies not in the vastness of
+                  space, but in the intricate folds of our own consciousness.
+                </p>
+                <p>
+                  <span class="text-white font-medium">Apometria</span> is not a
+                  religion, nor is it purely science in the material sense. It
+                  is the bridge. It is the methodology of spirit, applied with
+                  the precision of a surgeon and the compassion of a saint. In
+                  this first volume, we begin by dismantling the barriers of
+                  perception that have long kept us tethered to a singular,
+                  dense reality.
+                </p>
+                <blockquote
+                  class="border-l-4 border-primary pl-6 py-2 my-8 italic text-white/90 bg-primary/10 rounded-r-lg"
+                >
+                  "To heal the body, one must first understand the architecture
+                  of the soul. The physical form is but a shadow cast by a far
+                  more complex light."
+                </blockquote>
+                <p>
+                  As you turn these pages, you are invited to suspend
+                  disbelief—not to abandon reason, but to expand it. We will
+                  explore the energetic anatomy that underpins your physical
+                  existence. We will map the chakras not just as colorful wheels
+                  of energy, but as functional gears in the engine of your life.
+                </p>
+                <p>
+                  The techniques described herein are powerful. They require
+                  responsibility, intent, and above all, love. Multidimensional
+                  healing is not a passive act; it is a collaboration between
+                  the healer, the healed, and the cosmic forces that sustain us
+                  all.
+                </p>
+                <h4 class="font-display text-xl text-white font-bold mt-8 mb-2">
+                  The Scope of This Work
+                </h4>
+                <p>
+                  This volume serves as the foundation. We will cover the basic
+                  laws of apometry, the dissociation of space-time, and the
+                  initial protocols for spirit rescue. It is designed for both
+                  the novice seeker and the experienced medium.
+                </p>
+                <p>
+                  We begin with the breath. The simple, rhythmic anchor that
+                  ties the spirit to the vessel. Close your eyes. Breathe. And
+                  prepare to step across the threshold.
+                </p>
+                <p>
+                  The journey involves peeling back layers of the self that have
+                  been constructed over lifetimes. These layers, often formed
+                  from trauma, societal conditioning, and forgotten memories,
+                  act as filters through which we perceive reality. Apometria
+                  teaches us to identify these filters, acknowledge their
+                  origins, and gently dismantle them.
+                </p>
+                <p>
+                  Consider the analogy of a radio. Most of us are tuned to a
+                  single station, believing the music we hear is the only music
+                  that exists. Yet, the airwaves are crowded with symphonies,
+                  news broadcasts, and static. Learning Apometria is learning to
+                  turn the dial. It is learning to tune into the frequencies of
+                  higher dimensions where healing occurs instantaneously, where
+                  time is fluid, and where separation is recognized as the
+                  illusion it is.
+                </p>
+              </div>
+              <!-- Fade out effect at bottom -->
+              <div
+                class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#150b1a] to-transparent pointer-events-none flex items-end justify-center pb-6"
+              >
+                <span
+                  class="text-sm text-[#b88dce] font-medium bg-[#150b1a]/80 px-4 py-1 rounded-full backdrop-blur-sm border border-white/10"
+                  >Scroll to read more</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Simple Footer -->
+    <footer class="mt-auto border-t border-white/5 py-8 bg-[#150b1a]">
+      <div
+        class="max-w-7xl mx-auto px-10 flex flex-col md:flex-row items-center justify-between gap-4"
+      >
+        <p class="text-[#b88dce] text-sm">
+          © 2023 Apometria Trilogy. All rights reserved.
+        </p>
+        <div class="flex gap-6">
+          <a
+            class="text-[#b88dce] hover:text-white transition-colors text-sm"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-[#b88dce] hover:text-white transition-colors text-sm"
+            href="#"
+            >Terms of Service</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
